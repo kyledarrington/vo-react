@@ -1,0 +1,129 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+.home{
+    padding-top: 75px;
+}
+.container{
+    display:grid;
+    grid-template-areas: "sizzle demo"
+                         "services services"
+                         "blog about";
+    .home-sizzle{
+        grid-area: sizzle;
+        margin: auto;
+        @include breakpoint('md'){
+            width: 100%;
+            background-color: white;
+            text-align: center;
+        }
+    }
+    .home-demo{
+        margin: 1rem 0;
+        justify-self: center;
+        grid-area: demo;
+    }
+    .home-service-bar{
+        position: relative;
+        #services{
+            position: absolute;
+            top: -75px;
+        }
+        grid-area: services;
+    }
+    .home-blog-feed{
+        grid-area: blog;
+        margin-top: 2.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .home-about{
+        margin: auto 0;
+        grid-area: about;
+        position: relative;
+        #about{
+            position: absolute;
+            top: -75px;
+        }
+        @include breakpoint('md'){margin: auto 1rem;}
+        .about-header{
+            color: $dark-accent;
+            margin: 0;
+            text-transform: uppercase;
+            font-weight: bolder;
+            @include rfs(42);
+            @include breakpoint(md){text-align:center;}
+        }
+    }
+    max-width: 1440px;
+    margin: 0px auto;
+    @include breakpoint('md'){
+        grid-template-areas: "demo"
+                             "sizzle"
+                             "services"
+                             "about"
+                             "blog";
+    }
+}
+
+.hero{
+    background-color: $light-shade;
+    #hero-content{
+        min-height: 250px;
+        display: grid;
+        grid-template-areas: "portrait text";
+        column-gap: 75px;
+        justify-content: center;
+        #hero-portrait{
+            grid-area: portrait;
+            height:250px;
+            img{
+                height:95%;
+                border-radius: 12.5px;
+                max-height: 250px;
+                margin: 2.5% 0;
+                width:auto;
+            }
+        }
+        #hero-text{
+            grid-area: text;
+            margin-top:auto;
+            margin-bottom: auto;
+            h1, h2, h3{
+                padding:0;
+                margin:0;
+                line-height: 1
+            }
+            h1 {
+                @include font-size(80px);
+                text-transform: uppercase;
+                color:$dark-accent;
+            }
+            h2 {
+                @include font-size(64px);
+                text-transform: uppercase;
+                color: $light-accent;
+            }
+        
+            h3 {
+                @include font-size(44px);
+                text-transform: uppercase;
+                color:$dark-accent;
+            }
+        }
+        @include breakpoint('md'){
+            height: auto;
+            padding-top: 1rem;
+            grid-template-areas: "portrait"
+                                 "text";
+            justify-items: center;
+            text-align: center;
+        }
+        @include breakpoint('sm'){
+            h1{font-size: 36px!important;}
+            h2{font-size: 32px!important;}
+            h3{font-size: 24px!important;}
+        }
+    }
+}

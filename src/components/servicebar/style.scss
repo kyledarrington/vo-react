@@ -1,0 +1,65 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+.service-bar{
+    width:100%;
+    background-color: $deep-purple;
+    height: 335px;
+     &::before{
+        content:"";
+        background-color: $deep-purple;
+        position: absolute;
+        height: inherit;
+        width: 200vw;
+        left: -100vw;
+        z-index: -1;
+    } 
+    .service-bar-header{
+        margin: 0;
+        font-weight: bolder;
+        color: $light-shade;
+        text-align: center;
+        text-transform: uppercase;
+        @include font-size(42px);
+    }
+    @include breakpoint('md'){
+        height: auto;
+    }
+}
+.service-card-container{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1.5rem;
+    justify-content: center;
+    @include breakpoint('md'){
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        padding: 0 2rem;
+    }
+}
+.service-card{
+    display:inline-block;
+    justify-self: center;
+    .service-card-header{
+        color: $light-accent;
+        font-weight: 700;
+        @include font-size(30px);
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0px;
+    }
+    .service-card-icon{
+        max-height:125px;
+        width: auto;
+        max-width: 100%;
+        display: block;
+        margin: 0px auto;
+    }
+    .service-card-text{
+        text-align: center;
+        color: $light-shade;
+        @include font-size(18px);
+    }
+}

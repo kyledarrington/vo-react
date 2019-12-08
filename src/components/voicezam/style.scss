@@ -1,0 +1,25 @@
+@import "../../common/palette.scss";
+@import "../../common/rfs.scss";
+@import "../../common/breakpoints.scss";
+
+.demo-container{
+    max-width: 350px;
+}
+.demo{
+    width:320px;
+    max-height: 400px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.demo-header{
+    @include font-size(30px);
+    margin-bottom:.5rem;
+    margin-top: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color: $dark-accent;
+    @include breakpoint("md"){
+        text-decoration: underline;
+    }
+}

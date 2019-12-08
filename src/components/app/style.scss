@@ -1,0 +1,61 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+
+@font-face {
+    font-family: 'proximanova-regular';
+    src: url('/Webfonts/proximanova-regular-webfont.woff2') format('woff2'),
+        url('/Webfonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+$proxima: 'proximanova-regular', sans-serif;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $dark-shade;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $dark-accent;
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $light-accent;
+    -webkit-transition: 1s;
+}
+
+body{
+    margin: 0;
+    font-family:  $proxima;
+    background-color: $dark-shade;
+}
+
+p {
+    @include rfs(18);
+}
+
+a {
+    transition:.2s;
+    color:#57207e;
+    font-size:1.25rem;
+    text-decoration:none;
+    &:hover{
+        color:#78b7e2;
+    }
+}
+
+*{
+    box-sizing: border-box;
+}

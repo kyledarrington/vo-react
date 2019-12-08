@@ -1,0 +1,58 @@
+@import "../../common/palette.scss";
+@import "../../common/rfs.scss";
+@import "../../common/breakpoints.scss";
+
+@function tint($color, $percentage) {
+    @return mix(white, $color, $percentage);
+  }
+
+.sizzle-container{
+    border-top: 2px solid $deep-purple;
+    border-bottom: 2px solid $deep-purple;
+    max-width: 665px;
+    margin: 1rem 0 1rem 0;
+    padding:1rem;
+    @include breakpoint('md'){
+        //border: none;
+        max-width: none;
+        margin: 1rem;
+    }
+}
+
+.sizzle{
+    @include rfs(22);
+    margin-top:0;
+    font-weight:600;
+    line-height: 1.6;
+    color: $dark-accent;
+    @include breakpoint('sm'){
+        font-size: 20px;
+        text-align: left;
+    }
+}
+
+.contact-button {
+    max-width: 475px;
+    min-width: 75%;
+    height: 3em;
+    @include rfs(24px);
+    background-color: $deep-purple;
+    margin-top: 1em;
+    border-right: 5px solid darken($deep-purple, 15%);
+    border-top: 5px solid lighten($deep-purple, 17.5%);
+    color: $light-shade;
+    display: block;
+    margin: 0px auto;
+    span {
+        color: $light-shade;
+        text-transform: uppercase;
+        @include rfs(36px);
+    }
+}
+
+.contact-button:hover{
+    background-color: tint($deep-purple, 20%);
+    border-right: 5px solid tint(darken($deep-purple, 15%), 20%);
+    border-top: 5px solid tint(lighten($deep-purple, 17.5%), 20%);
+    transition: .2s;
+}

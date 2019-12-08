@@ -1,0 +1,58 @@
+Proxima Nova Regular v3.017
+October 08 2018
+
+3.017
+fixed small glitch in Proxima Nova 3.016
+
+3.016
+- Added Azurbijani currency symbol
+- Added alternate seriffed figure one for all figure styles (not just tabular lining)
+- Increased the size of dagger and dbldagger (to make them clearer at smaller sizes on screen)
+- Improved design of Oslash and oslash
+- Improved design of slashed zero (to better distinguish from Oslash)
+- Revised design of german double s, including cap form (previous forms available as a stylistic set)
+
+file changes:
+Proxima Nova Regular v1.4 - UPDATED from v1.3
+
+----
+Proxima Nova Regular v1.3
+October 04 2018
+
+file changes:
+Proxima Nova Regular v1.3 - UPDATED from v1.2
+
+----
+Proxima Nova Regular v2.014
+November 07 2017
+
+Proxima Nova 2.014
+- Improved hinting on i and j (certain low ppm sizes of Bold were problematic on Windows), both OTF and TTF versions
+- Additional support for mark-to-base and mark-to-mark
+- Improvements and additions to accents
+- Improved accents for Vietnamese
+-'okina support added for Hawaiian
+
+file changes:
+Proxima Nova Regular v1.2 - UPDATED from v1.1
+
+----
+Proxima Nova Regular v3.012
+June 27 2017
+
+• Extensive additions to Cyrillic support, including support for Bulgarian, Serbian, and Macedonian variants.
+• A few additional Greek characters.
+• Underline thickness now matches weight. (Earlier versions used the same thickness for all weights.)
+• hhea vertical metrics are restored to pre-3.000 values. This mostly affects use on iOS.
+• Many small fixes and touch-ups.
+• I now include a Usage Notes PDF with the fonts.
+
+file changes:
+Proxima Nova Regular v1.1 - UPDATED from v1.0
+
+----
+Proxima Nova Regular v1.0
+December 07 2016
+
+files included:
+Proxima Nova Regular v1.0

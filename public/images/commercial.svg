@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 428 341" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g transform="matrix(1,0,0,1,-689.765,-143.442)">
+        <g transform="matrix(0.844723,0,0,0.772454,130.24,52.1498)">
+            <g transform="matrix(1.01575,0,0,0.611709,-92.1833,31.1232)">
+                <path d="M859.883,229.141C892.863,180.258 924.468,153.27 955.161,150.499C988.292,147.509 1020.36,172.736 1051.95,229.1" style="fill:none;stroke:rgb(87,32,126);stroke-width:10.83px;"/>
+            </g>
+            <g transform="matrix(0.766114,0,0,0.70138,265.549,103.825)">
+                <path d="M1178.99,649.574L755.531,649.574L778.216,230.654L1156.3,230.654L1178.99,649.574ZM1143.27,614.238L1124.41,265.989L810.107,265.989L791.249,614.238L1143.27,614.238Z" style="fill:rgb(87,32,126);"/>
+            </g>
+            <g transform="matrix(0.914446,0,0,1,45.1156,3.15862)">
+                <path d="M1120.96,270.688L1083.99,270.688L1078.4,184.324L734.693,184.324L714.071,503.146L894.744,503.146L892.652,535.496L675.011,535.496L699.818,151.974L1113.28,151.974L1120.96,270.688Z" style="fill:rgb(87,32,126);"/>
+            </g>
+            <g transform="matrix(1.04958,0,0,0.70138,5.35839,103.825)">
+                <path d="M859.883,229.141C892.863,180.258 924.468,153.27 955.161,150.499C988.292,147.509 1020.36,172.736 1051.95,229.1" style="fill:none;stroke:rgb(87,32,126);stroke-width:10.21px;"/>
+            </g>
+        </g>
+        <g transform="matrix(1,0,0,1,22.7198,-16.1465)">
+            <text x="905.96px" y="447.849px" style="font-family:'Arimo-Regular', 'Arimo', sans-serif;font-size:189.004px;fill:rgb(87,32,126);">$</text>
+        </g>
+    </g>
+</svg>
