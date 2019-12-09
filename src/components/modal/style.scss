@@ -1,0 +1,22 @@
+@import '../../common/palette.scss';
+.ReactModal__Content{
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    border: 2px solid $deep-purple!important;
+    background-color: $dark-shade!important;
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}

@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import navbarItems from "./navItems";
+import ContactModalContainer from "../contactmodal/ContactModalContainer";
 
 export default class NavbarContainer extends Component {
     constructor(props) {
         super(props)
-        this.state = { width: 0, showBurgerMenu: false, items: []}
         this.checkViewport = this.checkViewport.bind(this)
         this.handleBurgerToggle = this.handleBurgerToggle.bind(this)
         this.handleLinkClick = this.handleLinkClick.bind(this)
+        this.state = { width: 0, showBurgerMenu: false, items: []}
     }
 
     componentDidMount() {

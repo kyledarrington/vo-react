@@ -2,10 +2,6 @@
 @import "../../common/rfs.scss";
 @import "../../common/breakpoints.scss";
 
-@function tint($color, $percentage) {
-    @return mix(white, $color, $percentage);
-  }
-
 .sizzle-container{
     border-top: 2px solid $deep-purple;
     border-bottom: 2px solid $deep-purple;

@@ -34,6 +34,7 @@ html {
 ::-webkit-scrollbar-thumb:hover {
     background: $light-accent;
     -webkit-transition: 1s;
+    transition: 1s;
 }
 
 body{
