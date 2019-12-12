@@ -1,53 +1,30 @@
 import React, {useState} from 'react'
 import BlogFeed from './BlogFeed'
-const rssParser = require('../../../node_modules/rss-parser/dist/rss-parser.js')
-
+import Axios from 'axios'
 export default class BlogFeedContainer extends React.Component {
     constructor(props){
         super(props)
-        this.state = {posts : []}
+        this.state = {posts : [], error: false}
     }
     async componentDidMount(){
-        let parser = new rssParser
-        let blogPosts = []
-        const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
-        const feed = await parser.parseURL(CORS_PROXY + 'https://blog.kyledarrington.com/feed')
-        for (var entry of feed.items) {
-            if (blogPosts.length >= 6) break;
-            blogPosts.push({
-                date : new Date(entry.pubDate).toLocaleDateString(),
-                url : entry.link,
-                title : entry.title
-            })
+        var blogPosts = [],
+            isError = false
+        try{
+            const result = await Axios.get('http://localhost:3000/blog-feed')
+            if(result.status == 200) blogPosts = result.data
+            else isError = true
         }
-        this.setState({posts: blogPosts, loaded: true})
+        catch(err){
+            isError = true
+        }
+        finally{
+            console.log('finally called')
+            this.setState({posts: blogPosts, error : isError})
+        }
     }
     render() {
         return (
-            <BlogFeed posts={this.state.posts} loaded={this.state.loaded} />
+            <BlogFeed posts={this.state.posts} error={this.state.error} />
         )
     }
 }
-
-
-
-/* export default async function BlogFeedContainer() {
-    let parser = new rssParser
-    let blogPosts = []
-    const CORS_PROXY = "https://cors-anywhere.herokuapp.com/"
-    const feed = await parser.parseURL(CORS_PROXY + 'https://blog.kyledarrington.com/feed')
-    for (var entry of feed.items) {
-        if (blogPosts.length >= 5) break;
-        blogPosts.push({
-            date : new Date(entry.pubDate).toLocaleDateString(),
-            url : entry.link,
-            title : entry.title
-        })
-    }
-    console.log(blogPosts)
-    const [posts, setPosts] = useState(blogPosts);
-    return (
-        <BlogFeed posts={posts} />
-    )
-}
- */
