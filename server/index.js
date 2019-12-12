@@ -12,7 +12,7 @@ const router = express.Router();
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
 router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname + "/public/index.html"));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 router.post("/contact", async function(req, res) {
@@ -64,7 +64,7 @@ router.get("/blog-feed", async function(req, res) {
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use("/scripts", express.static(__dirname + "/node_modules"));
 app.use("/", router);
 app.listen(port, "127.0.0.1", err => {
