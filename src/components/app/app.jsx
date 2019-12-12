@@ -10,7 +10,6 @@ export default class App extends Component {
     constructor(props){
         super(props)
         this.openModal = (modalContent) => {
-            console.log('called')
             this.setState({
                 modalIsOpen : true,
                 content : modalContent

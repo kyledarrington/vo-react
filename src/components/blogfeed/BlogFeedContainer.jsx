@@ -18,7 +18,6 @@ export default class BlogFeedContainer extends React.Component {
             isError = true
         }
         finally{
-            console.log('finally called')
             this.setState({posts: blogPosts, error : isError})
         }
     }

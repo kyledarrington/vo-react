@@ -3,7 +3,6 @@ import './style.scss'
 
 export default function BlogFeed(props) {
     let isLoaded = props.posts.length > 0
-    console.log(props)
     let postElements = []
     for (let i = 0; i < props.posts.length; i++) {
         const post = props.posts[i];

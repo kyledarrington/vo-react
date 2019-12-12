@@ -28,7 +28,7 @@ const Navbar = props => {
                     <a
                         className="nav-link" 
                         style={{cursor: 'pointer'}}
-                        onClick={() => {console.log('clicked'); openModal(<ContactModalContainer />);}}
+                        onClick={() => {openModal(<ContactModalContainer />);}}
                     >
                         CONTACT
                     </a>

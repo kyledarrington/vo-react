@@ -11,9 +11,7 @@ export default class ContactModalContainer extends Component {
     handleSubmit(event) {
         event.preventDefault();
         this.setState({ submitting: true });
-        this.submitContactForm(event.target).then(() => {
-            console.log(this.state);
-        });
+        this.submitContactForm(event.target).then(() => {});
     }
     async submitContactForm(target) {
         const data = new FormData(target);
@@ -24,7 +22,7 @@ export default class ContactModalContainer extends Component {
         try {
             let wasSuccessful = false;
             let result = await Axios.post(
-                "http://localhost:3000/contact",
+                "/contact",
                 payload
             );
             if (result.status == 200) {
