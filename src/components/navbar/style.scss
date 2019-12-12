@@ -4,7 +4,7 @@ $rfs-minimum-font-size: 16px;
 
 .navbar {
     position:fixed;
-    z-index: 9999;
+    z-index: 9998;
     background-color: $deep-purple;
     border-bottom: 3px solid darken($deep-purple, 20%);
     align-items: end;

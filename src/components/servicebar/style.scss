@@ -11,9 +11,10 @@
         background-color: $deep-purple;
         position: absolute;
         height: inherit;
-        width: 200vw;
-        left: -100vw;
+        width: 100vw;
+        left: calc(-50vw + #{100% / 2});
         z-index: -1;
+        overflow: hidden;
     } 
     .service-bar-header{
         margin: 0;

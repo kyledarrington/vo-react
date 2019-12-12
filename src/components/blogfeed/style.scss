@@ -10,11 +10,13 @@
     background-color: white;
     border: .25rem solid $deep-purple;
     height: 515px;
-    max-width: 315px;
+    width: 315px;
     overflow-y: scroll;
     li {
         list-style: none;
     }
+    scrollbar-color: $dark-accent $dark-shade;
+    scrollbar-width: thin;
 }
 
 hr {

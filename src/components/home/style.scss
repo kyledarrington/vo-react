@@ -34,13 +34,14 @@
     }
     .home-blog-feed{
         grid-area: blog;
-        margin-top: 2.5rem;
-        margin-left: auto;
-        margin-right: auto;
+        justify-self: center;
+        margin: 2.5rem 0;
+
     }
     .home-about{
-        margin: auto 0;
+        margin-right: 3rem;
         grid-area: about;
+        align-self: center;
         position: relative;
         #about{
             position: absolute;
