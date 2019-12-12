@@ -14,13 +14,25 @@ html {
     scroll-behavior: smooth;
 }
 
+html, body{
+    scrollbar-color: $dark-accent $dark-shade;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+}
+
 /* width */
 ::-webkit-scrollbar {
+    width: 10px;
+}
+::-moz-scrollbar {
     width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
+    background: $dark-shade;
+}
+::-moz-scrollbar-track {
     background: $dark-shade;
 }
 
