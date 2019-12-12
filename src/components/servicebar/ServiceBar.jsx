@@ -11,7 +11,7 @@ export default function ServiceBar() {
     ]
     let cardComponents = []
     for(var card of cards){
-        cardComponents.push(<ServiceCard title={card.title} description={card.description} iconSrc={card.iconSrc} />)
+        cardComponents.push(<ServiceCard key={card.title} title={card.title} description={card.description} iconSrc={card.iconSrc} />)
     }
     return (
         <div className="service-bar">

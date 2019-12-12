@@ -7,22 +7,22 @@ import ContactModalContainer from "../contactmodal/ContactModalContainer";
 
 const Navbar = props => {
     let itemElements = [
-        <li className="nav-item">
+        <li key="1" className="nav-item">
             <a className="nav-link" href="#about">
                 ABOUT
             </a>
         </li>,
-        <li className="nav-item">
+        <li key="2" className="nav-item">
             <a className="nav-link" href="#services">
                 SERVICES
             </a>
         </li>,
-        <li className="nav-item">
+        <li key="3" className="nav-item">
             <a className="nav-link" href="#">
                 BLOG
             </a>
         </li>,
-        <ModalContext.Consumer>
+        <ModalContext.Consumer key="4">
             {({ openModal }) => (
                 <li className="nav-item">
                     <a
