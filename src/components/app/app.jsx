@@ -30,9 +30,9 @@ export default class App extends Component {
         return (
             <div>
                 <ModalContext.Provider value={this.state}>
-                <NavbarContainer />
+                    <NavbarContainer />
                     <ModalContainer />
-                <Home />
+                    <Home />
                 </ModalContext.Provider>
             </div>
         )
