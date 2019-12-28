@@ -79,8 +79,9 @@ app.get("/blog-feed", async function(req, res) {
 });
 
 app.use("/assets", express.static(path.join(__dirname, '../public')))
-app.use(vhost('localhost', router))
-   .use(vhost('blog.localhost', blogRouter))
+app.use(vhost('blog.*', blogRouter))
+   .use(vhost('*', router))
+   
 app.listen(port, "127.0.0.1", err => {
     if (err) {
         return console.log("error", err);
