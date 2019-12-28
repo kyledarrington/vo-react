@@ -1,10 +1,14 @@
 @import '../../../common/palette.scss';
 @import '../../../common/rfs.scss';
+@import '../../../common/breakpoints.scss';
 
 
 .article-container{
     display: grid;
     grid-template-columns: repeat(3, auto);
+    @include breakpoint('md'){
+        grid-template-columns: auto;
+    }
 }
 
 .article{
@@ -15,6 +19,9 @@
     justify-self: center;
     background-color: $light-shade;
     border: 2px solid $deep-purple;
+    @include breakpoint('md'){
+        grid-column: 1;
+    }
 }
 
 .article-content{
@@ -26,6 +33,13 @@
     }
     p{
         line-height: 1.5;
+    }
+    .article-header-image{
+        width:100%;
+        height: auto;
+    }
+    @include breakpoint('md'){
+        margin: 1rem;
     }
 }
 
