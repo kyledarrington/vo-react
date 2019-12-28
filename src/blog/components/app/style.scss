@@ -1,0 +1,78 @@
+@import '../../../common/palette.scss';
+@import '../../../common/rfs.scss';
+
+@font-face {
+    font-family: 'proximanova-regular';
+    src: url('/assets/Webfonts/proximanova-regular-webfont.woff2') format('woff2'),
+        url('/assets/Webfonts/proximanova-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+$proxima: 'proximanova-regular', sans-serif;
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body{
+    scrollbar-color: $dark-accent $dark-shade;
+    scrollbar-width: thin;
+    overflow-x: hidden;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-moz-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: $dark-shade;
+}
+::-moz-scrollbar-track {
+    background: $dark-shade;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $dark-accent;
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $light-accent;
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+body{
+    margin: 0;
+    font-family:  $proxima;
+    background-color: $dark-shade;
+}
+
+p {
+    @include rfs(18);
+}
+
+a {
+    transition:.2s;
+    color:$dark-accent;
+    font-size:1.25rem;
+    text-decoration:none;
+    &:hover{
+        color:#78b7e2;
+    }
+}
+
+.navbar-spacer{
+    height: 75px;
+}
+
+*{
+    box-sizing: border-box;
+}

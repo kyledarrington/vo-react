@@ -1,0 +1,30 @@
+@import '../../../common/palette.scss';
+@import '../../../common/rfs.scss';
+@import '../../../common/breakpoints.scss';
+
+.feed{
+    margin: 1.5rem 0;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.card-container{
+    grid-column: 4/10;
+    justify-self: center;
+    width: 100%;
+    max-width: 700px;
+    .preview-card{
+        width: 100%;
+        margin-bottom: 2rem;
+        @include breakpoint('sm'){
+            margin-bottom: .75rem;
+        }
+    }
+    @include breakpoint('lg'){
+        grid-column: 2/12;
+    }
+    @include breakpoint('md'){
+        grid-column: 1/13;
+    }
+}
