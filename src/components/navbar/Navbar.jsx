@@ -59,7 +59,7 @@ const Navbar = props => {
                 <div id="nav-content">
                     <div id="nav-branding-container">
                         <div id="nav-logo">
-                            <img src="images/logo_white.svg" />
+                            <img src="/assets/images/logo_white.svg" />
                         </div>
                         <div id="nav-title">
                             <a className="nav-link" href="#top">

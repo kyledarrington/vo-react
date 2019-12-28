@@ -13,7 +13,7 @@ export default function home() {
                 <div id="hero-content">
                     <div id="hero-portrait">
                         <img
-                            src="images/portrait.jpg"
+                            src="/assets/images/portrait.jpg"
                         />
                     </div>
                     <div id="hero-text">

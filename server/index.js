@@ -62,15 +62,12 @@ router.get("/blog-feed", async function(req, res) {
     }
 });
 
-app.use(express.json());
-app.use(cors());
-app.use(express.static(path.join(__dirname, '../public')));
-app.use("/scripts", express.static(__dirname + "/node_modules"));
-app.use("/", router);
+app.use("/assets", express.static(path.join(__dirname, '../public')))
+app.use(vhost('localhost', router))
+   .use(vhost('blog.localhost', blogRouter))
 app.listen(port, "127.0.0.1", err => {
     if (err) {
         return console.log("error", err);
     }
-
     console.log(`server listening on ${port}`);
 });
