@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const Jimp = require('jimp')
 const path = require('path')
 
 const IMAGE_PATH = path.join(__dirname, '../../public/blog/images/')
