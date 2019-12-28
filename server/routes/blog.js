@@ -5,6 +5,7 @@ require("dotenv").config();
 const IMAGE_PATH = path.join(__dirname, '../../public/blog/images/')
 const MONGO_USER = process.env.MONGO_USER
 const MONGO_PW = process.env.MONGO_PW
+const MONGO_URL = process.env.MONGO_URL
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var postSchema = new mongoose.Schema({
@@ -14,16 +15,20 @@ var postSchema = new mongoose.Schema({
     mdBody: String,
     snippet: String,
     postDate: Date
+},
+{
+    collection: 'Post'
 })
 const Post = mongoose.model('Post', postSchema)
-const url = 'mongodb://localhost:27017/vo-blog-db'
+const url = MONGO_URL
 
 if (mongoose.connection.readyState == 0){
     mongoose.set('useNewUrlParser', true);
     mongoose.set('useFindAndModify', false);
     mongoose.set('useCreateIndex', true);
     mongoose.set('useUnifiedTopology', true);
-    mongoose.connect(url, {user: MONGO_USER, pass: MONGO_PW})
+    mongoose.connect(url, {user: MONGO_USER, pass: MONGO_PW, dbName: 'vo-blog-db'})
+    
 }
 
 module.exports = function (app){
