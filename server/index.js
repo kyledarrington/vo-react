@@ -6,16 +6,25 @@ const rssParser = require("rss-parser");
 
 const app = express();
 const path = require("path");
+const blog = require('./routes/blog')(app)
 
 const port = 3000;
 const router = express.Router();
+const blogRouter = express.Router();
+
+const port = 3000;
+
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
+blogRouter.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/blog/index.html'));
 });
 
-router.post("/contact", async function(req, res) {
+router.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+app.post("/contact", async function(req, res) {
     var data = req.body;
     var emailBody = `
 	<p>Name: ${data.name}</p> 
@@ -40,7 +49,7 @@ router.post("/contact", async function(req, res) {
     return;
 });
 
-router.get("/blog-feed", async function(req, res) {
+app.get("/blog-feed", async function(req, res) {
     let parser = new rssParser();
     try {
         let posts = [];
