@@ -1,14 +1,20 @@
 require("dotenv").config();
+var morgan = require('morgan')
+const path = require("path");
 const express = require("express");
 const cors = require("cors");
 const sendgrid = require("@sendgrid/mail");
 const rssParser = require("rss-parser");
+const fileUpload = require('express-fileupload')
+const vhost = require("vhost");
 
 const app = express();
-const path = require("path");
 const blog = require('./routes/blog')(app)
 
-const port = 3000;
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(cors());
+app.use(fileUpload());
 const router = express.Router();
 const blogRouter = express.Router();
 
@@ -61,7 +67,8 @@ app.get("/blog-feed", async function(req, res) {
             posts.push({
                 date: new Date(entry.pubDate).toLocaleDateString(),
                 url: entry.link,
-                title: entry.title
+                title: entry.title,
+                description: entry.contentSnippet
             });
         }
         res.json(posts);
