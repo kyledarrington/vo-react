@@ -1,7 +1,10 @@
 const mongoose = require('mongoose')
 const path = require('path')
+require("dotenv").config();
 
 const IMAGE_PATH = path.join(__dirname, '../../public/blog/images/')
+const MONGO_USER = process.env.MONGO_USER
+const MONGO_PW = process.env.MONGO_PW
 
 var ObjectId = mongoose.Schema.Types.ObjectId;
 var postSchema = new mongoose.Schema({
@@ -20,7 +23,7 @@ if (mongoose.connection.readyState == 0){
     mongoose.set('useFindAndModify', false);
     mongoose.set('useCreateIndex', true);
     mongoose.set('useUnifiedTopology', true);
-    mongoose.connect(url)
+    mongoose.connect(url, {user: MONGO_USER, pass: MONGO_PW})
 }
 
 module.exports = function (app){
