@@ -79,7 +79,7 @@ app.get("/blog-feed", async function(req, res) {
 });
 
 app.use("/assets", express.static(path.join(__dirname, '../public')))
-const host = process.env.HOST == 'production' ? 'kyledarrington.com' : 'localhost'
+const host = process.env.NODE_ENV == 'production' ? 'kyledarrington.com' : 'localhost'
 app.use(vhost('blog.' + host, blogRouter))
    .use(vhost('www.blog.' + host, blogRouter))
    .use(vhost(host, router))
