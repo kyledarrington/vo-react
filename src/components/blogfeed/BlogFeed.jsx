@@ -6,8 +6,9 @@ export default function BlogFeed(props) {
     let postElements = []
     for (let i = 0; i < props.posts.length; i++) {
         const post = props.posts[i];
+        const date = new Date(post.postDate).toLocaleDateString()
         postElements.push(
-            <li key={i} className="blog-post"><a href={post.url}>{post.date}: {post.title}</a><hr /></li>
+            <li key={i} className="blog-post"><a href={'https://blog.kyledarrington.com/post/' + post.slug}>{date}: {post.title}</a><hr /></li>
         )
     }
     return (

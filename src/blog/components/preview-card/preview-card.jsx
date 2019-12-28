@@ -8,7 +8,11 @@ export default function PreviewCard(props) {
         <div class="preview-card">
             <Link to={props.url}><h2 class="preview-title">{props.title}</h2></Link>
             <p><em>Posted {postDate}</em></p>
-            <a href={props.url}><div class="preview-image-container"></div></a>
+            <a href={props.url}>
+                <div class="preview-image-container">
+                    <img className="preview-image" src={props.headerSrc} />
+                </div>
+            </a>
             <p>{props.description}</p>
         </div>
     )

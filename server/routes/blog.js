@@ -14,7 +14,8 @@ var postSchema = new mongoose.Schema({
     title: String,
     mdBody: String,
     snippet: String,
-    postDate: Date
+    postDate: Date,
+    headerSrc: String
 },
 {
     collection: 'Post'
@@ -53,7 +54,7 @@ module.exports = function (app){
         try{
             queryResult = await Post
                 .findOne({slug : req.params.slug})
-                .select('title mdBody postDate')
+                .select('title mdBody postDate headerSrc')
                 .exec()
         }
         catch(err){

@@ -10,7 +10,7 @@ export default class BlogFeedContainer extends React.Component {
         var blogPosts = [],
             isError = false
         try{
-            const result = await Axios.get('/blog-feed')
+            const result = await Axios.get('/posts')
             if(result.status == 200) blogPosts = result.data
             else isError = true
         }

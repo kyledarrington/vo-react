@@ -8,12 +8,13 @@
     background-color: $light-shade;
     border: 2px solid $deep-purple;
     .preview-image-container{
-        height: 300px;
-        width: 90%;
         margin: 1rem auto;
         overflow: hidden;
-        border: 2px dashed $dark-accent;
-        content: "IMAGE HERE";
+    }
+    .preview-image{
+        width: 100%;
+        height: auto;
+        max-height: 300px;
     }
     h2{
         margin: 0;
