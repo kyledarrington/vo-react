@@ -1,30 +1,19 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar";
-import ContactModalContainer from "../contactmodal/ContactModalContainer";
 
 export default class NavbarContainer extends Component {
     constructor(props) {
         super(props)
-        this.checkViewport = this.checkViewport.bind(this)
         this.handleBurgerToggle = this.handleBurgerToggle.bind(this)
         this.handleLinkClick = this.handleLinkClick.bind(this)
-        this.state = { width: 0, showBurgerMenu: false, items: []}
+        this.state = { width: 0, showBurgerMenu: false, baseHost: '', protocol : ''}
     }
 
     componentDidMount() {
-        this.checkViewport()
-        window.addEventListener("resize", this.checkViewport)
-        window.addEventListener("orientationchange", this.checkViewport)
-    }
-
-    componentWillUnmount() {
-        window.removeEventListener("resize", this.checkViewport)
-    }
-
-    checkViewport(event) {
-        const newWidth =
-            event != null ? event.target.outerWidth : window.outerWidth
-        this.setState({ width: newWidth })
+        const loc = window.location
+        const hostSplit = loc.host.split('.')
+        const host = hostSplit.length > 1 ? hostSplit[hostSplit.length - 1] : loc.host
+        this.setState({baseHost: host, protocol: loc.protocol + '//'})
     }
 
     handleBurgerToggle() {
@@ -45,11 +34,11 @@ export default class NavbarContainer extends Component {
     render() {
         return (
             <Navbar
-                width={this.state.width}
                 showBurgerMenu={this.state.showBurgerMenu}
                 onBurgerClick={this.handleBurgerToggle}
                 onLinkClick={this.handleLinkClick}
-                itemElements={this.state.items}
+                baseHost={this.state.baseHost}
+                protocol={this.state.protocol}
             />
         );
     }

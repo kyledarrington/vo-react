@@ -8,17 +8,17 @@ import ContactModalContainer from "../contactmodal/ContactModalContainer";
 const Navbar = props => {
     let itemElements = [
         <li key="1" className="nav-item">
-            <a className="nav-link" href="#about">
+            <a className="nav-link" href={props.protocol + props.baseHost + '/#about'}>
                 ABOUT
             </a>
         </li>,
         <li key="2" className="nav-item">
-            <a className="nav-link" href="#services">
+            <a className="nav-link" href={props.protocol +props.baseHost + '/#services'}>
                 SERVICES
             </a>
         </li>,
         <li key="3" className="nav-item">
-            <a className="nav-link" href="#">
+            <a className="nav-link" href={props.protocol + 'blog.' + props.baseHost}>
                 BLOG
             </a>
         </li>,
@@ -62,7 +62,7 @@ const Navbar = props => {
                             <img src="/assets/images/logo_white.svg" />
                         </div>
                         <div id="nav-title">
-                            <a className="nav-link" href="#top">
+                            <a className="nav-link" href={props.protocol + props.baseHost + '/#top'}>
                                 <span>KYLE D. ARRINGTON</span>
                             </a>
                         </div>
