@@ -6,7 +6,6 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './style.scss'
 import FeedContainer from '../feed/feed-container'
 import ArticleContainer from '../article/article-conatiner'
-import PostEntryContainer from '../post-entry/post-entry-container'
 
 export default class App extends React.Component {
     constructor(props){
