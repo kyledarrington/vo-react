@@ -13,7 +13,7 @@ const Navbar = props => {
             </a>
         </li>,
         <li key="2" className="nav-item">
-            <a className="nav-link" href={props.protocol +props.baseHost + '/#services'}>
+            <a className="nav-link" href={props.protocol + props.baseHost + '/#services'}>
                 SERVICES
             </a>
         </li>,
