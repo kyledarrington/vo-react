@@ -11,7 +11,7 @@ export default function Article(props) {
                 <h1 className="article-title">{props.data.title}</h1> 
                 <p><em>Posted {postDate}</em></p>
                 <img className="article-header-image" src={props.data.headerSrc} />
-                <ReactMarkdown source={props.data.mdBody} />
+                <ReactMarkdown source={props.data.mdBody} escapeHtml={false} />
             </div>
         </div>
     )

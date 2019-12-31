@@ -38,6 +38,13 @@
         width:100%;
         height: auto;
     }
+    div > img{
+        display: block;
+        margin: auto;
+        &+p{
+            text-align: center;
+        }
+    }
     @include breakpoint('md'){
         margin: 1rem;
     }
