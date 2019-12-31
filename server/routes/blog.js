@@ -54,7 +54,7 @@ module.exports = function (app){
         try{
             queryResult = await Post
                 .findOne({slug : req.params.slug})
-                .select('title mdBody postDate headerSrc')
+                .select('title mdBody postDate headerSrc snippet')
                 .exec()
         }
         catch(err){
