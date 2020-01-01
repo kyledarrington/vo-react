@@ -1,5 +1,5 @@
 import React from "react";
-import PreviewCard from "../preview-card/preview-card";
+import PreviewCard from "../preview-card/preview-card.jsx";
 import "./style.scss";
 export default function Feed(props) {
     let cards = [];

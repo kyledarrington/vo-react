@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ContactModal from "./ContactModal";
+import ContactModal from "./ContactModal.jsx";
 import Axios from "axios";
 
 export default class ContactModalContainer extends Component {

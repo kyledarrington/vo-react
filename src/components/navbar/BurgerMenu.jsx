@@ -1,6 +1,6 @@
 import React from 'react'
 import './style.scss'
-import SocialIcons from '../socialicons/SocialIcons'
+import SocialIcons from '../socialicons/SocialIcons.jsx'
 
 const BurgerMenu = props => {
     return (

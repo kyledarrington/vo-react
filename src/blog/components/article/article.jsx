@@ -18,16 +18,15 @@ export default function Article(props) {
     )
     const loading = <div className="article-content"><span>Loading Article...</span></div>
     return (
-        <div className="article-container">
+        <div>
             <Helmet>
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@kylearringtonvo" />
-                <meta name="twitter:creator" content="@kylearringtonvo" />
                 <meta name="twitter:title" content={props.data.title} />
                 <meta name="twitter:description" content={props.data.snippet} />
                 <meta name="twitter:image" content={props.data.headerSrc} />
             </Helmet>
-            {props.data.title == null ? loading : content}
+            <div className="article-container">
+                {props.data.title == null ? loading : content}
+            </div>
         </div>
     )
 }

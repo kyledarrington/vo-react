@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import BlogFeed from './BlogFeed'
+import BlogFeed from './BlogFeed.jsx'
 import Axios from 'axios'
 export default class BlogFeedContainer extends React.Component {
     constructor(props){

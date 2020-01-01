@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
-import Feed from './feed'
+import Feed from './feed.jsx'
 
 export default class FeedContainer extends Component {
     constructor(props){

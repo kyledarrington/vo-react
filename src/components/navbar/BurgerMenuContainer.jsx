@@ -1,5 +1,5 @@
 import React from 'react'
-import BurgerMenuToggle from './BurgerMenuToggle'
+import BurgerMenuToggle from './BurgerMenuToggle.jsx'
 import './style.scss'
 
 class BurgerMenuContainer extends React.Component{

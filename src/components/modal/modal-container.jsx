@@ -1,6 +1,6 @@
-import ModalContext from '../../contexts/modalcontext'
+import ModalContext from '../../contexts/modalcontext.js'
 import React, { Component } from 'react'
-import Modal from './modal'
+import Modal from './modal.jsx'
 
 export default class ModalContainer extends Component {
     
