@@ -4,6 +4,7 @@ import Home from '../home/home'
 import ModalContainer from '../modal/modal-container'
 import React, { Component } from 'react'
 import ModalContext from '../../contexts/modalcontext'
+import Helmet from 'react-helmet'
 import ContactModalContainer from '../contactmodal/ContactModalContainer'
 
 export default class App extends Component {
@@ -29,6 +30,9 @@ export default class App extends Component {
     render() {
         return (
             <div>
+                <Helmet>
+                    <title>Kyle D. Arrington Voiceover Blog</title>
+                </Helmet>
                 <ModalContext.Provider value={this.state}>
                     <NavbarContainer />
                     <ModalContainer />

@@ -5,13 +5,14 @@ const fs = require('fs').promises
 const DEFAULT_TWITTER_TITLE = 'Kyle D. Arrington VO Blog'
 const DEFAULT_TWITTER_DESCRIPTION = 'Thoughts, feelings, and advice brought to you by Voice Over Artist Kyle D. Arrington.'
 const DEFAULT_TWITTER_IMAGE = ''
+const DEFAULT_PAGE_TITLE = 'Kyle D. Arrington Voiceover Blog'
 
 module.exports = function (app, router){
     router.get('/', async (req, res) => {
         const file = path.join(__dirname, '../../public/blog/index.html')
         const data = await fs.readFile(file, 'utf-8')
-        console.log(data)
         const result = data
+            .replace(/\$PAGE_TITLE/g, DEFAULT_PAGE_TITLE)
             .replace(/\$TWITTER_TITLE/g, DEFAULT_TWITTER_TITLE)
             .replace(/\$TWITTER_DESCRIPTION/g, DEFAULT_TWITTER_DESCRIPTION)
             .replace(/\$TWITTER_IMAGE/g, DEFAULT_TWITTER_IMAGE)
@@ -23,10 +24,10 @@ module.exports = function (app, router){
         const file = path.join(__dirname, '../../public/blog/index.html')
         const data = await fs.readFile(file, 'utf8')
         const result = data
+            .replace(/\$PAGE_TITLE/g, post.title)
             .replace(/\$TWITTER_TITLE/g, post.title)
             .replace(/\$TWITTER_DESCRIPTION/g, post.snippet.replace(/\"/g, '&quot;'))
             .replace(/\$TWITTER_IMAGE/g, post.headerSrc)
-        console.log(result)
         res.send(result)
     })
 

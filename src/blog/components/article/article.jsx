@@ -20,6 +20,7 @@ export default function Article(props) {
     return (
         <div className="article-container">
             <Helmet>
+                <title>{props.data.title}</title>
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:site" content="@kylearringtonvo" />
                 <meta name="twitter:creator" content="@kylearringtonvo" />
