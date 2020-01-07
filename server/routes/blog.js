@@ -1,66 +1,44 @@
-const mongoose = require('mongoose')
+const helper = require('./blog-helper')
 const path = require('path')
-require("dotenv").config();
+const fs = require('fs').promises
 
-const IMAGE_PATH = path.join(__dirname, '../../public/blog/images/')
-const MONGO_USER = process.env.MONGO_USER
-const MONGO_PW = process.env.MONGO_PW
-const MONGO_URL = process.env.MONGO_URL
+const DEFAULT_TWITTER_TITLE = 'Kyle D. Arrington VO Blog'
+const DEFAULT_TWITTER_DESCRIPTION = 'Thoughts, feelings, and advice brought to you by Voice Over Artist Kyle D. Arrington.'
+const DEFAULT_TWITTER_IMAGE = ''
 
-var ObjectId = mongoose.Schema.Types.ObjectId;
-var postSchema = new mongoose.Schema({
-    id :  ObjectId,
-    slug: String,
-    title: String,
-    mdBody: String,
-    snippet: String,
-    postDate: Date,
-    headerSrc: String
-},
-{
-    collection: 'Post'
-})
-const Post = mongoose.model('Post', postSchema)
-const url = MONGO_URL
+module.exports = function (app, router){
+    router.get('/', async (req, res) => {
+        const file = path.join(__dirname, '../../public/blog/index.html')
+        const data = await fs.readFile(file, 'utf-8')
+        console.log(data)
+        const result = data
+            .replace(/\$TWITTER_TITLE/g, DEFAULT_TWITTER_TITLE)
+            .replace(/\$TWITTER_DESCRIPTION/g, DEFAULT_TWITTER_DESCRIPTION)
+            .replace(/\$TWITTER_IMAGE/g, DEFAULT_TWITTER_IMAGE)
+        res.send(result)
+    })
 
-if (mongoose.connection.readyState == 0){
-    mongoose.set('useNewUrlParser', true);
-    mongoose.set('useFindAndModify', false);
-    mongoose.set('useCreateIndex', true);
-    mongoose.set('useUnifiedTopology', true);
-    mongoose.connect(url, {user: MONGO_USER, pass: MONGO_PW, dbName: 'vo-blog-db'})
-    
-}
+    router.get('/post/:slug', async (req, res) => {
+        const post = await helper.fetchOnePost(req.params.slug)
+        const file = path.join(__dirname, '../../public/blog/index.html')
+        const data = await fs.readFile(file, 'utf8')
+        const result = data
+            .replace(/\$TWITTER_TITLE/g, post.title)
+            .replace(/\$TWITTER_DESCRIPTION/g, post.snippet.replace(/\"/g, '&quot;'))
+            .replace(/\$TWITTER_IMAGE/g, post.headerSrc)
+        console.log(result)
+        res.send(result)
+    })
 
-module.exports = function (app){
     app.get('/posts', async (req, res) => {
-        let limit = parseInt(req.query.max) || 0,
-            queryResult = undefined
-        try{
-            queryResult = await Post
-                .find()
-                .limit(limit)
-                .sort('-postDate')
-                .exec()
-        }
-        catch(err){
-            console.error(err)
-        }
-        res.json(queryResult)
+        let limit = parseInt(req.query.max) || 0
+        const result = await helper.fetchPosts(limit)
+        res.json(result)
     })
 
     app.get('/posts/:slug', async (req, res) => {
-        let queryResult = undefined
-        try{
-            queryResult = await Post
-                .findOne({slug : req.params.slug})
-                .select('title mdBody postDate headerSrc snippet')
-                .exec()
-        }
-        catch(err){
-            console.error(err)
-        }
-        res.json(queryResult)
+        const post = await helper.fetchOnePost(req.params.slug)
+        res.json(post)
     })
 }
 

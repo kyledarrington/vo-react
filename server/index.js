@@ -9,14 +9,15 @@ const fileUpload = require('express-fileupload')
 const vhost = require("vhost");
 
 const app = express();
-const blog = require('./routes/blog')(app)
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
 const router = express.Router();
+
 const blogRouter = express.Router();
+const blog = require('./routes/blog')(app, blogRouter)
 
 const port = 3000;
 

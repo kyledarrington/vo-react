@@ -4,6 +4,7 @@ module.exports = [
     {
         entry: {
             main: "./src/index.jsx",
+            blog: './src/blog/index.jsx'
         },
         module: {
             rules: [
@@ -30,7 +31,8 @@ module.exports = [
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
         }
-    },
+    }
+    /*
     {
         entry: {
             blog: "./src/blog/index.jsx",
@@ -60,5 +62,5 @@ module.exports = [
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
         }
-    }
+    }*/
 ]
