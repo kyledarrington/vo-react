@@ -1,35 +1,33 @@
-import path from "path"
-import fs from "fs"
-import express from "express"
-
-import morgan from 'morgan'
-
-import cors from "cors"
-import sendgrid from "@sendgrid/mail"
-import rssParser from "rss-parser"
-import fileUpload from 'express-fileupload'
-import vhost from "vhost"
+require("dotenv").config();
+var morgan = require('morgan')
+const path = require("path");
+const express = require("express");
+const cors = require("cors");
+const sendgrid = require("@sendgrid/mail");
+const rssParser = require("rss-parser");
+const fileUpload = require('express-fileupload')
+const vhost = require("vhost");
 
 const app = express();
+const blog = require('./routes/blog')(app)
 
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(cors());
 app.use(fileUpload());
 const router = express.Router();
-
 const blogRouter = express.Router();
-import blog from './routes/blog/blog.js'
-const blogRoutes = blog(app, blogRouter)
 
 const port = 3000;
 
-const PUBLIC_PATH = path.join(__dirname, '../../public')
-
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
+blogRouter.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, '../public/blog/index.html'));
+});
+
 router.get("*", function(req, res) {
-    res.sendFile(path.join(PUBLIC_PATH, 'index.html'));
+    res.sendFile(path.join(__dirname, '../public/index.html'));
 });
 
 app.post("/contact", async function(req, res) {
@@ -80,7 +78,7 @@ app.get("/blog-feed", async function(req, res) {
     }
 });
 
-app.use("/assets", express.static(PUBLIC_PATH))
+app.use("/assets", express.static(path.join(__dirname, '../public')))
 const host = process.env.NODE_ENV == 'production' ? 'kyledarrington.com' : 'localhost'
 app.use(vhost('blog.' + host, blogRouter))
    .use(vhost('www.blog.' + host, blogRouter))

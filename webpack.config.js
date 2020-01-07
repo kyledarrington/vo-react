@@ -1,5 +1,4 @@
 const path = require('path')
-const nodeExternals = require('webpack-node-externals')
 
 module.exports = [
     {
@@ -61,34 +60,5 @@ module.exports = [
             contentBase: path.join(__dirname, 'public'),
             historyApiFallback: true
         }
-    },
-    {
-        entry : {
-            server: "./server/index.js"
-        },
-        output : {
-            path: path.join(__dirname, "server/dist"),
-            publicPath: "/",
-            filename: "server.js"
-        },
-        target: 'node',
-        node: {
-            __dirname: false,
-            __filename: false
-        },
-        externals: [nodeExternals()],
-        module: {
-            rules: [
-                {
-                    test: /\.(js)$|\.(jsx)$/,
-                    exclude: /node-modules/,
-                    use: ['babel-loader']
-                },
-                {
-                    test: /\.(scss)$/,
-                    use: ['isomorphic-style-loader', 'css-loader', 'sass-loader']
-                }
-            ]
-        },
     }
 ]

@@ -1,9 +1,10 @@
 import './style.scss'
-import NavbarContainer from '../navbar/NavbarContainer.jsx'
-import Home from '../home/home.jsx'
-import ModalContainer from '../modal/modal-container.jsx'
+import NavbarContainer from '../navbar/NavbarContainer'
+import Home from '../home/home'
+import ModalContainer from '../modal/modal-container'
 import React, { Component } from 'react'
-import ModalContext from '../../contexts/modalcontext.js'
+import ModalContext from '../../contexts/modalcontext'
+import ContactModalContainer from '../contactmodal/ContactModalContainer'
 
 export default class App extends Component {
     constructor(props){

@@ -1,9 +1,9 @@
 import React from "react";
 import "./style.scss";
-import BurgerMenu from "./BurgerMenu.jsx";
-import SocialIcons from "../socialicons/SocialIcons.jsx";
-import ModalContext from "../../contexts/modalcontext.js";
-import ContactModalContainer from "../contactmodal/ContactModalContainer.jsx";
+import BurgerMenu from "./BurgerMenu";
+import SocialIcons from "../socialicons/SocialIcons";
+import ModalContext from "../../contexts/modalcontext";
+import ContactModalContainer from "../contactmodal/ContactModalContainer";
 
 const Navbar = props => {
     let itemElements = [

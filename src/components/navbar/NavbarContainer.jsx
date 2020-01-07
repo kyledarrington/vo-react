@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar.jsx";
+import Navbar from "./Navbar";
 
 export default class NavbarContainer extends Component {
     constructor(props) {

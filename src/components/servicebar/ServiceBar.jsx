@@ -1,5 +1,5 @@
 import React from 'react'
-import ServiceCard from './ServiceCard.jsx'
+import ServiceCard from './ServiceCard'
 import './style.scss'
 
 export default function ServiceBar() {
