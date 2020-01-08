@@ -8,6 +8,7 @@ import FeedContainer from '../feed/feed-container'
 import ArticleContainer from '../article/article-conatiner'
 import ReactGA from 'react-ga'
 import { createBrowserHistory } from 'history'
+import { Helmet } from 'react-helmet'
 
 const history = createBrowserHistory();
 history.listen(location => {
@@ -38,6 +39,9 @@ export default class App extends React.Component {
     render() {
         return (
             <Router history={history}>
+                <Helmet>
+                    <title>Kyle D. Arrington Voice Over Blog</title>
+                </Helmet>
                 <div>
                     <ModalContext.Provider value={this.state}>
                         <NavbarContainer />

@@ -30,7 +30,7 @@ export default class App extends Component {
         return (
             <div>
                 <Helmet>
-                    <title>Kyle D. Arrington Voiceover Blog</title>
+                    <title>Kyle D. Arrington - Voice Over Artist</title>
                 </Helmet>
                 <ModalContext.Provider value={this.state}>
                     <NavbarContainer />
