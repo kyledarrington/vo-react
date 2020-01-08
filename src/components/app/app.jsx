@@ -5,7 +5,6 @@ import ModalContainer from '../modal/modal-container'
 import React, { Component } from 'react'
 import ModalContext from '../../contexts/modalcontext'
 import Helmet from 'react-helmet'
-import ContactModalContainer from '../contactmodal/ContactModalContainer'
 
 export default class App extends Component {
     constructor(props){
