@@ -2,10 +2,18 @@ import React from 'react'
 import NavbarContainer from '../../../components/navbar/NavbarContainer'
 import ModalContext from '../../../contexts/modalcontext'
 import ModalContainer from '../../../components/modal/modal-container'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Router, Route, Switch} from 'react-router-dom'
 import './style.scss'
 import FeedContainer from '../feed/feed-container'
 import ArticleContainer from '../article/article-conatiner'
+import ReactGA from 'react-ga'
+import { createBrowserHistory } from 'history'
+
+const history = createBrowserHistory();
+history.listen(location => {
+    ReactGA.set({ page: location.pathname });
+    ReactGA.pageview(location.pathname);
+});
 
 export default class App extends React.Component {
     constructor(props){
@@ -29,7 +37,7 @@ export default class App extends React.Component {
     }
     render() {
         return (
-            <Router>
+            <Router history={history}>
                 <div>
                     <ModalContext.Provider value={this.state}>
                         <NavbarContainer />
