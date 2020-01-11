@@ -20,6 +20,11 @@ html, body{
     overflow-x: hidden;
 }
 
+:target{
+    padding-top:75px;
+    margin-top:-75px;
+}
+
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
@@ -56,7 +61,7 @@ body{
 }
 
 p {
-    @include rfs(18);
+    @include rfs(18px);
 }
 
 a {

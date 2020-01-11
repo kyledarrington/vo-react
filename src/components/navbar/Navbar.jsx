@@ -75,6 +75,7 @@ const Navbar = props => {
                 </div>
             </nav>
             <BurgerMenu showMenu={props.showBurgerMenu} items={itemElements} />
+            <div className="navbar-spacer"></div>
         </div>
     );
 };

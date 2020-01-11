@@ -22,15 +22,19 @@ export default function home() {
                         <h3>Sharp Wit, Bold Presence, Radiant Joy</h3>
                     </div>
                 </div>
+                
             </div>
             </section>
+            
             <div className="container">
                 <div className="home-sizzle"><Sizzle /></div>            
                 <div className="home-demo"><VoiceZam /></div>
-                <div className="home-service-bar"><section id="services"></section><ServiceBar /></div>
+                
+                <div className="home-service-bar"><section id="services"><ServiceBar /></section></div>
+                
                 <div className="home-blog-feed"><BlogFeedContainer /></div>
+                <section id="about"></section>
                 <div className="home-about">
-                    <section id="about"></section>
                     <h2 className="about-header">About Kyle</h2>
                     <p>
                         From the moment I had access to a microphone and a desktop,  I've found any excuse I can to send my voice out into the world. After completing my BA in Theater, I returned to my tech nerd roots and took on the role of a CRM/Web Developer for a prominent visual effects company in Boston. However, I find nothing more fulfilling than connecting to an audience through performance, and  acting has always remained a central part of my life.

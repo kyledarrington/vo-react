@@ -56,7 +56,7 @@ body{
 }
 
 p {
-    @include rfs(18);
+    @include rfs(18px);
 }
 
 a {
@@ -67,10 +67,6 @@ a {
     &:hover{
         color:#78b7e2;
     }
-}
-
-.navbar-spacer{
-    height: 75px;
 }
 
 *{

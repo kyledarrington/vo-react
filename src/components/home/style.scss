@@ -2,9 +2,6 @@
 @import '../../common/rfs.scss';
 @import '../../common/breakpoints.scss';
 
-.home{
-    padding-top: 75px;
-}
 .container{
     display:grid;
     grid-template-areas: "sizzle demo"
@@ -26,10 +23,6 @@
     }
     .home-service-bar{
         position: relative;
-        #services{
-            position: absolute;
-            top: -75px;
-        }
         grid-area: services;
     }
     .home-blog-feed{
@@ -43,17 +36,13 @@
         grid-area: about;
         align-self: center;
         position: relative;
-        #about{
-            position: absolute;
-            top: -75px;
-        }
         @include breakpoint('md'){margin: auto 1rem;}
         .about-header{
             color: $dark-accent;
             margin: 0;
             text-transform: uppercase;
             font-weight: bolder;
-            @include rfs(42);
+            @include rfs(42px);
             @include breakpoint(md){text-align:center;}
         }
     }

@@ -45,7 +45,6 @@ export default class App extends React.Component {
                 <div>
                     <ModalContext.Provider value={this.state}>
                         <NavbarContainer />
-                        <div className="navbar-spacer"></div>
                         <ModalContainer />
                         <Switch>
                             <Route exact path="/" component={FeedContainer} />
