@@ -80,6 +80,10 @@ app.get("/images/:path", (req, res) => {
     res.redirect('/assets/images/' + path)
 })
 
+app.get("/logo.png", (req, res) => {
+    res.redirect('/assets/images/logo_email.png')
+})
+
 app.use("/assets", express.static(path.join(__dirname, '../public')))
 const host = process.env.NODE_ENV == 'production' ? 'kyledarrington.com' : 'localhost'
 app.use(vhost('blog.' + host, blogRouter))
