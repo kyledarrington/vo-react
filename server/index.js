@@ -23,10 +23,6 @@ const port = 3000;
 
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
 
-blogRouter.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, '../public/blog/index.html'));
-});
-
 router.get("*", function(req, res) {
     res.sendFile(path.join(__dirname, '../public/index.html'));
 });
@@ -78,6 +74,11 @@ app.get("/blog-feed", async function(req, res) {
         res.sendStatus(400);
     }
 });
+
+app.get("/images/:path", (req, res) => {
+    const path = req.params.path
+    res.redirect('/assets/images/' + path)
+})
 
 app.use("/assets", express.static(path.join(__dirname, '../public')))
 const host = process.env.NODE_ENV == 'production' ? 'kyledarrington.com' : 'localhost'
