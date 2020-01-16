@@ -21,6 +21,9 @@ module.exports = function (app, router){
 
     router.get('/post/:slug', async (req, res) => {
         const post = await helper.fetchOnePost(req.params.slug)
+        if (post == null){
+            return res.sendStatus(404)
+        }
         const file = path.join(__dirname, '../../public/blog/index.html')
         const data = await fs.readFile(file, 'utf8')
         const result = data
@@ -39,6 +42,9 @@ module.exports = function (app, router){
 
     app.get('/posts/:slug', async (req, res) => {
         const post = await helper.fetchOnePost(req.params.slug)
+        if (post == null){
+            return res.sendStatus(404)
+        }
         res.json(post)
     })
 }

@@ -38,7 +38,7 @@ module.exports = {
         let queryResult = []
         try{
             queryResult = await Post
-                .find()
+                .find({public: true})
                 .limit(count)
                 .sort('-postDate')
                 .exec()
@@ -53,7 +53,7 @@ module.exports = {
         let queryResult = []
         try{
             queryResult = await Post
-                .findOne({slug : slug})
+                .findOne({slug : slug, public: true})
                 .select('title mdBody postDate headerSrc snippet slug')
                 .exec()
         }
