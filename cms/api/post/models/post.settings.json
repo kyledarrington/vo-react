@@ -1,0 +1,36 @@
+{
+  "connection": "default",
+  "collectionName": "Post",
+  "info": {
+    "name": "Post"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "mdBody": {
+      "type": "richtext",
+      "required": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "postDate": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "snippet": {
+      "type": "text"
+    },
+    "headerSrc": {
+      "type": "string"
+    },
+    "public": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

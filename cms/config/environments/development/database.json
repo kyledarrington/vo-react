@@ -1,0 +1,19 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "mongoose",
+      "settings": {
+        "database": "vo-blog-db",
+        "host": "64.225.12.232",
+        "srv": false,
+        "port": 27017,
+        "username": "kyle",
+        "password": "donnelDaisy2019"
+      },
+      "options": {
+        "authenticationDatabase": "admin"
+      }
+    }
+  }
+}
