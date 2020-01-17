@@ -1,9 +1,12 @@
 {
-  "host": "blog.kyledarrington.com",
+  "host": "localhost",
   "port": "${process.env.PORT || 1337}",
   "production": true,
   "proxy": {
-    "enabled": false
+    "enabled": true,
+    "ssl": true,
+    "host": "blog.kyledarrington.com",
+    "port": 8443
   },
   "cron": {
     "enabled": false
