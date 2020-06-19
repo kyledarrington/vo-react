@@ -1,0 +1,27 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+$rhap_theme-color: white !default;
+$rhap_background-color: $deep-purple !default;
+$rhap_bar-color: white !default;
+$rhap_time-color: white !default;
+$rhap_font-family: inherit !default;
+
+@import '~react-h5-audio-player/src/styles.scss';
+
+.rhap_play-pause-button{
+    color: $red-accent !important;
+}
+.rhap_current-time{
+    width: 50px !important;
+    font-weight: bold;
+}
+
+.rhap_total-time{
+    font-weight: bold;
+}
+
+.rhap_container{
+    border:solid 3px darken($deep-purple, 10%) !important;
+}
