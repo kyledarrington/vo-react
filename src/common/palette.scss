@@ -4,6 +4,7 @@ $light-shade: #ffffff;
 $light-accent: #78B7E2;
 $deep-purple: #57207e;
 $dark-accent: #526a98;
+$red-accent: #ee1302;
 
 @function tint($color, $percentage) {
     @return mix(white, $color, $percentage);
