@@ -33,7 +33,6 @@ export default class App extends Component {
                     <title>Kyle D. Arrington - Voice Over Artist</title>
                 </Helmet>
                 <ModalContext.Provider value={this.state}>
-                    <NavbarContainer />
                     <ModalContainer />
                     <Home />
                 </ModalContext.Provider>
