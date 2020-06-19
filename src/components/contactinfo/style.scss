@@ -1,0 +1,22 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+.social-container{
+    margin: 1rem 0;
+    h3, img{
+        display: inline;
+    }
+    width:100%;
+    h3{
+        color: $dark-accent;
+        font-weight: bold;
+        vertical-align: top;
+        margin: 0;
+        @include rfs(28px);
+        @include breakpoint('md'){
+            @include rfs(18px);
+        }
+    }
+    
+}
