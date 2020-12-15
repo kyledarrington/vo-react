@@ -40,7 +40,7 @@ export default function home() {
                     </div>
                 </div>
                 <div className="row mt-5 justify-content-center">
-                    <div className="order-lg-1 order-2 col-lg-6 col-12 branded-box">
+                    <div className="order-lg-1 order-2 col-lg-6 col-12 branded-box m-lg-0 m-3">
                         <h2>About Kyle</h2>
                         <hr />
                         <Bio />
