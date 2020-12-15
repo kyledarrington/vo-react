@@ -1,0 +1,9 @@
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+p{
+    @include rfs(24px);
+    @include breakpoint('md'){
+        @include rfs(16px);
+    }
+}

@@ -1,0 +1,20 @@
+@import '../../common/palette.scss';
+@import '../../common/rfs.scss';
+@import '../../common/breakpoints.scss';
+
+.branded-circle{
+    width: 400px;
+    height: 400px;
+    @include breakpoint('md'){
+        width: 325px;
+        height: 325px;
+        vertical-align: middle;
+        h2{
+            @include rfs(36px)
+        }
+        h4{
+            @include rfs(18px);
+            vertical-align: middle;
+        }
+    }
+}
