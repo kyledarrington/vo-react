@@ -12,6 +12,7 @@ $rhap_font-family: inherit !default;
 
 .rhap_play-pause-button{
     color: $red-accent !important;
+    overflow: visible;
 }
 .rhap_current-time{
     width: 50px !important;
