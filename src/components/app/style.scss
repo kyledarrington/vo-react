@@ -1,6 +1,12 @@
 @import '../../common/palette.scss';
 @import '../../common/rfs.scss';
 
+$container-max-widths: (
+  xl: 1200px
+);
+
+@import "~bootstrap/scss/bootstrap";
+
 @font-face {
     font-family: 'bebas-neue';
     src: url('/assets/Webfonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
@@ -26,6 +32,7 @@ html, body{
     scrollbar-color: $dark-accent $dark-shade;
     scrollbar-width: thin;
     overflow-x: hidden;
+    height:100%;
 }
 
 :target{
@@ -74,6 +81,20 @@ p {
 
 h1, h2, h3{
     font-family: $header-font;
+    text-transform: uppercase;
+}
+
+h2{
+    @include rfs(46px);
+    color: $dark-accent;
+}
+h3{
+    @include rfs(36px);
+    color: $deep-purple;
+}
+h4{
+    @include rfs(24px);
+    color: $deep-purple;
 }
 
 a {
@@ -84,6 +105,24 @@ a {
     &:hover{
         color:#78b7e2;
     }
+}
+
+.branded-box{
+    background-color: #fff;
+    border: solid 5px $deep-purple;
+    border-radius: 5%;
+}
+
+.branded-circle{
+    background-color: #fff;
+    border: solid 5px $deep-purple;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 *{

@@ -5,6 +5,7 @@
 .home{
     height:100%;
 }
+/*
 .container{
     display:grid;
     justify-content: center;
@@ -26,6 +27,7 @@
             padding-left:.5rem;
         }
     }
+*/
     .home-demo{
         margin: auto 0;
         grid-area: demo;
@@ -50,9 +52,6 @@
         }
     }
     .home-portrait{
-        grid-area: portrait;
-        display:flex;
-        justify-content: center;
         img{
             @include breakpoint('md'){
                 max-height:325px;
@@ -86,25 +85,25 @@
             @include breakpoint(md){text-align:center;}
         }
     }
-    max-width: 1440px;
-    margin: 0px auto;
-}
+    //max-width: 1440px;
+    //margin: 0px auto;
+//}
 
 .hero{
     background-color: $light-shade;
     border-bottom: solid 5px $deep-purple;
     margin-bottom: 2rem;
-    max-height: 200px;
+    min-height: 250px;
     @include breakpoint("md"){
         margin-bottom: 0;
         border-bottom: 2px solid $deep-purple;
     }
     #hero-content{
-        height: 200px;
-        display: grid;
-        grid-template-areas: "text";
+        height: 250px;
+        display: flex;
         column-gap: 75px;
         justify-content: center;
+        align-items: center;
         #hero-text{
             grid-area: text;
             margin-top:auto;
@@ -115,12 +114,12 @@
                 line-height: 1
             }
             h1 {
-                @include font-size(110px);
+                @include font-size(124px);
                 text-transform: uppercase;
                 color:$dark-accent;
             }
             h2 {
-                @include font-size(85px);
+                @include font-size(100px);
                 text-transform: uppercase;
                 color: $light-accent;
             }
