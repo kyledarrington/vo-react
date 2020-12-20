@@ -30,7 +30,7 @@ router.get("*", function(req, res) {
 app.post("/contact", async function(req, res) {
     var data = req.body;
     var emailBody = `
-	<p>Name: ${data.name}</p> 
+	<p>Name: ${data.firstName} ${data.lastName}</p> 
 	<p> Subject: ${data.subject} </p> 
 	<p>Email: ${data.email}</p> 
 	<p>${data.body}</p>`;
