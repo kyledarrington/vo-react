@@ -5,33 +5,32 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "production": "cross-env NODE_ENV=production npm run build",
     "start": "strapi start",
-    "start-production": "cross-env NODE_ENV=production npm start",
     "build": "strapi build",
     "strapi": "strapi"
   },
   "devDependencies": {},
   "dependencies": {
-    "cross-env": "^6.0.3",
-    "strapi": "3.0.0-beta.18.4",
-    "strapi-admin": "3.0.0-beta.18.4",
-    "strapi-connector-mongoose": "3.0.0-beta.18.4",
-    "strapi-plugin-content-manager": "3.0.0-beta.18.4",
-    "strapi-plugin-content-type-builder": "3.0.0-beta.18.4",
-    "strapi-plugin-email": "3.0.0-beta.18.4",
-    "strapi-plugin-upload": "3.0.0-beta.18.4",
-    "strapi-plugin-users-permissions": "3.0.0-beta.18.4",
-    "strapi-utils": "3.0.0-beta.18.4"
+    "strapi": "3.4.0",
+    "strapi-admin": "3.4.0",
+    "strapi-utils": "3.4.0",
+    "strapi-plugin-content-type-builder": "3.4.0",
+    "strapi-plugin-content-manager": "3.4.0",
+    "strapi-plugin-users-permissions": "3.4.0",
+    "strapi-plugin-email": "3.4.0",
+    "strapi-plugin-upload": "3.4.0",
+    "strapi-connector-bookshelf": "3.4.0",
+    "knex": "<0.20.0",
+    "sqlite3": "latest"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "a49f3e8e-ee5d-415a-8050-160ce68222cb"
+    "uuid": "40fe94ec-2f2a-46e8-8563-1a65b0705a78"
   },
   "engines": {
-    "node": ">=10.0.0",
+    "node": ">=10.16.0 <=14.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"
