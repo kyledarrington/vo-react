@@ -5,14 +5,9 @@ $container-max-widths: (
   xl: 1280px
 );
 
-@import "~bootstrap/scss/bootstrap";
+$primary : $deep-purple;
 
-@font-face {
-    font-family: 'bebas-neue';
-    src: url('/assets/Webfonts/Bebas_Neue/BebasNeue-Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import "~bootstrap/scss/bootstrap";
 
 @font-face {
     font-family: 'oswald';
@@ -21,8 +16,15 @@ $container-max-widths: (
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'oxygen';
+    src: url('/assets/Webfonts/Oxygen/Oxygen-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $header-font: 'oswald';
-$proxima: 'oswald', sans-serif;
+$proxima: 'oxygen', Arial, sans-serif;
 
 html {
     scroll-behavior: smooth;
@@ -83,6 +85,13 @@ h1, h2, h3{
     font-family: $header-font;
     text-transform: uppercase;
 }
+h4{
+    font-family: $header-font;
+}
+
+label{
+    font-family: $header-font;
+}
 
 h2{
     @include rfs(46px);
@@ -105,6 +114,10 @@ a {
     &:hover{
         color:#78b7e2;
     }
+}
+
+.btn{
+    font-weight: bold;
 }
 
 .branded-box{
