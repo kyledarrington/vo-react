@@ -12,7 +12,7 @@ export default function BlogFeed(props) {
         )
     }
     return (
-        <div className="blog-feed">
+        <div className="blog-feed branded-box">
             <ul className="blog-posts-list">
                 {!isLoaded && <p>Loading Posts. . .</p>}
                 {props.error && <p>ERROR!</p>}
