@@ -5,6 +5,11 @@
 .home{
     height:100%;
 }
+.tagline{
+    @include breakpoint('md'){
+        @include rfs('20px');
+    }
+}
 /*
 .container{
     display:grid;

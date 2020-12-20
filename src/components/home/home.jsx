@@ -29,7 +29,7 @@ export default function home() {
                 </section>
             </div>
             <div className="row text-center d-flex justify-content-center align-items-center" style={{height: '3rem', backgroundColor: '#57207e'}}>
-                <h3 style={{color: '#fff'}}>Sharp Wit | Bold Presence | Radiant Joy</h3>
+                <h3 className="tagline" style={{color: '#fff'}}>Sharp Wit | Bold Presence | Radiant Joy</h3>
             </div>
             <div className="row" style={{height: '3rem'}}></div>
             <div className="container h-100 mb-lg-5">
@@ -46,26 +46,26 @@ export default function home() {
                 </div>
                 <div className="row" style={{height: '6rem'}}></div>
                 <div className="row justify-content-center">
-                    <div className="col-10 p-4 branded-box">
+                    <div className="col-lg-10 col-11 p-4 branded-box">
                         <div class="row">
                             <div class="col"><h2>About Kyle</h2></div>
                         </div>
                         <hr />
                         <div class="row">
-                            <div class="col-3 d-flex justify-content-center align-items-center">
+                            <div class="col-lg-3 col-12 d-flex justify-content-center align-items-center">
                                 <img class="home-portrait" src="/assets/images/portrait.jpg"/>
                             </div>
-                            <div class="col-9"><Bio /></div>
+                            <div class="col-lg-9 col-12"><Bio /></div>
                         </div>
                     </div>
                 </div>
                 <div className="row" style={{height: '6.5rem'}}></div>
                 <div className="row">
-                    <div className="col-3">
+                    <div className="col-lg-3 col-12 order-lg-1 order-2 mt-lg-0 mt-5">
                         <h3>Blog Posts</h3>
                         <BlogFeedContainer />
                     </div>
-                    <div className="col-7 offset-2">
+                    <div className="col-lg-7 offset-lg-2 col-12 order-lg-2 order-1">
                         <ContactFormContainer />
                     </div>
                 </div>
