@@ -3,6 +3,7 @@
 
 p{
     @include rfs(24px);
+    font-family: 'oswald';
     @include breakpoint('md'){
         @include rfs(16px);
     }
